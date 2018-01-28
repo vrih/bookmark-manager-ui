@@ -22,6 +22,15 @@
                    (fn [e] (put! out e)))
     out))
 
+(defn prepare-ddg [x]
+  (str "https://duckduckgo.com/?q=" x "&ia=web"))
+
+(defn search-for-input "Search DDG for x"
+  [x]
+  (-> js.document
+      .-location
+      (set! (prepare-ddg x))))
+
 
 (let [keypresses (listen (dom/getElement "search") "keypress")]
   (go (while true
@@ -33,9 +42,12 @@
                     mediaElements (dom/getElementsByClass "bm")]
                 (if (= filterVal "all")
                   (doseq [el mediaElements] (style/showElement el true))
-                  (do
-                    (doseq [el mediaElements] (style/showElement el false))
-                    (doseq [el (dom/getElementsByClass filterVal)] (style/showElement el true)))))))))))
+                  (let [filterElements (dom/getElementsByClass filterVal)]
+                    (if (= 0 (count filterElements))
+                      (search-for-input filterVal)
+                      (do
+                        (doseq [el mediaElements] (style/showElement el false))
+                        (doseq [el (dom/getElementsByClass filterVal)] (style/showElement el true)))))))))))))
   
 
 
