@@ -1,0 +1,120 @@
+<!DOCTYPE html><html>
+  <head>
+    <meta charset="UTF-8">
+    <title>New tab</title>
+    <style type='text/css'>
+     * {
+         -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+         box-sizing: border-box;
+     }
+     body {
+         padding: 15px 0 5px 50px;
+         background: #1f1f1f url(.bm.shots/black-Linen.png);
+         font: 12px \"Helvetica Neue\", Helvetica, Arial, sans-serif;
+     }
+     .bm {
+         position: relative;
+         float: left;
+         margin: 15px;
+         padding: 1px;
+         opacity: 1;
+         border: 15px solid black;
+         border-radius: 5px;
+         -webkit-border-radius: 5px;
+         -moz-border-radius: 5px;
+         -webkit-transition: -webkit-box-shadow 600ms;
+         -moz-transition: -webkit-box-shadow 600ms;
+         -webkit-box-shadow: 0 0 1px 0 #555, 0 0 10px rgba(0,0,0,.5);
+         -moz-box-shadow: 0 0 1px 0 #555, 0 0 10px rgba(0,0,0,.5);
+         overflow: hidden;
+     }
+     .bm:hover {
+         -webkit-box-shadow: 0 0 40px #1ab0ff
+         , 0 0 3px #06bdff
+         , 0 1px 1px #4ee2ff
+         , 0 1px 0 #fff;
+         -moz-box-shadow: 0 0 40px #1ab0ff
+         , 0 0 3px #06bdff
+         , 0 1px 1px #4ee2ff
+         , 0 1px 0 #fff;
+     }
+     .bm:hover img {
+         opacity: 1;
+     }
+     .bm img {
+         min-width: 150px;
+         height: 150px;
+         opacity: .5;
+         border-radius: 5px;
+         -webkit-border-radius: 5px;
+         -moz-border-radius: 5px;
+         -webkit-transition: opacity 200ms;
+         -moz-transition: opacity 200ms;
+     }
+     .bm p {
+         margin: 0;
+         padding: 10px;
+         width: 100%;
+         background: rgba(0,0,0,.75);
+         position: absolute;
+         left: 0;
+         color: white;
+         letter-spacing: 1px;
+         bottom: -50px;
+         -webkit-font-smoothing: antialiased;
+         -webkit-transition: bottom 200ms ease-in;
+     }
+     .bm:hover p {
+         bottom: 0;
+     }
+     #search {
+         width:50%;
+         margin-left: auto;
+         margin-right: auto;
+         clear:both;
+         display:block;
+         margin-bottom: 15px;
+         font-weight: bold;
+         color: #5c5c5c
+     }
+
+     .noimage{
+         background-color: cadetblue;
+         height: 186.5px;
+         
+     }
+
+     .noimage a{
+         text-decoration: none;
+         
+     }
+
+     .letter{
+         width: 150px;
+         height: 150px;
+         font-size: 48px;
+         text-align: center;
+         text-decoration: none;
+         color:white;
+         font-weight: bold;
+         line-height: 150px;
+         
+         
+         
+     }
+     
+    </style>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+        crossorigin="anonymous"></script>
+  </head>
+  <body>
+      <input id="search" autofocus></input>
+      <div class="layout">
+        <div class="bm news"><a href='https://www.theguardian.com'><img src='.bm.shots/69d7c114ac713c51ae0dce294ddf8514.png'><p>The Guardian</p></a></div><div class="bm news"><a href='https://www.ft.com'><img src='.bm.shots/d988f88fd1efebb71562fc3e9dfcfc90.png'><p>FT</p></a></div><div class="bm news rss"><a href='https://www.feedly.com/'><img src='.bm.shots/912b0001233241272890fc1758da7403.png'><p>Feedly</p></a></div><div class="bm recipes"><a href='https://omnivorescookbook.com'><img src='.bm.shots/c4eb389663a3e590f009b2c5d889e1ff.png'><p>Omnivores Cookbook</p></a></div><div class="bm social"><a href='https://www.reddit.com'><img src='.bm.shots/3db452cf51fb17902572134b6913ba42.png'><p>Reddit</p></a></div><div class="bm noimage default"><a href='https://www.amazon.co.uk'><div class="letter">A</div><p>Amazon.co.uk</p></a></div><div class="bm social"><a href='https://www.twitter.com'><img src='.bm.shots/a39d5eaefe4c58ce22093df81796489f.png'><p>Twitter</p></a></div><div class="bm coding"><a href='https://www.github.com'><img src='.bm.shots/e75367bd5794ccfe22243e69ab1abb4a.png'><p>GitHub</p></a></div><div class="bm coding"><a href='https://www.bitbucket.org'><img src='.bm.shots/fc877cecfef2248abe1eebc5cc62d418.png'><p>bitbucket</p></a></div><div class="bm productivity"><a href='https://www.dropbox.com'><img src='.bm.shots/1b7fd114dff7571dc53ac2a74e12ed78.png'><p>Dropbox</p></a></div><div class="bm work"><a href='http://advertisingconsent.eu'><img src='.bm.shots/e0a590535b8ec74bfc5bb352a8576044.png'><p>IAB Advertising Consent</p></a></div><div class="bm work"><a href='https://cloudsearch.google.com'><img src='.bm.shots/8bf70ed9d5e4f66529623f5a0cd37edc.png'><p>CloudSearch</p></a></div><div class="bm noimage restaurant clerkenwell"><a href='http://www.wilmingtonclerkenwell.com/'><div class="letter">T</div><p>The Wilmington</p></a></div><div class="bm email"><a href='https://inbox.google.com/'><img src='.bm.shots/d4ceaf69462045dcd0d245168859f969.png'><p>Inbox</p></a></div><div class="bm noimage work google"><a href='https://drive.google.com/'><div class="letter">G</div><p>Google Drive</p></a></div><div class="bm work"><a href='https://trello.com/'><img src='.bm.shots/2d07d312f61263e388333bfd9920223c.png'><p>Trello</p></a></div><div class="bm recipes"><a href='https://www.bbcgoodfood.com/'><img src='.bm.shots/ce6c84274c450a9848c061c073f98d1a.png'><p>BBC Good Food</p></a></div><div class="bm productivity"><a href='https://en.todoist.com'><img src='.bm.shots/7ce7e296a9093ebf59d9ee7199fe499a.png'><p>Todoist</p></a></div><div class="bm noimage utilities"><a href='https://www.plus.net'><div class="letter">P</div><p>PlusNet</p></a></div><div class="bm noimage productivity work"><a href='https://calendar.google.com/calendar'><div class="letter">G</div><p>Google Calendar</p></a></div><div class="bm utilities"><a href='https://my.bulb.co.uk'><img src='.bm.shots/692e738ae6d40194cd61b242f379472e.png'><p>Bulb Energy</p></a></div><div class="bm media"><a href='https://www.youtube.com'><img src='.bm.shots/d245406cb6c9f36be9064c92c34e12e1.png'><p>YouTube</p></a></div><div class="bm social"><a href='https://www.facebook.com'><img src='.bm.shots/a24a5be7a6076556c8c2f16e5065bd40.png'><p>Facebook</p></a></div><div class="bm media"><a href='https://www.bbc.com'><img src='.bm.shots/f331a5ed3965fb59761dfcecfc7e7a34.png'><p>BBC</p></a></div><div class="bm news"><a href='http://www.economist.com'><img src='.bm.shots/a2dad6538752688daf428e34953cb1da.png'><p>The Economist</p></a></div><div class="bm noimage work"><a href='https://app.datadoghq.com'><div class="letter">D</div><p>Datadog</p></a></div><div class="bm social"><a href='https://instagram.com'><img src='.bm.shots/09f8b89478d7e1046fa93c7ee4afa99e.png'><p>Instagram</p></a></div><div class="bm restaurants"><a href='http://marmelokitchen.com'><img src='.bm.shots/a68ef4aae33d0e65b855ded399486f37.png'><p>Marmelo</p></a></div><div class="bm coding"><a href='https://stackoverflow.com/'><img src='.bm.shots/6c362d30505f9a33fe5357c9b087bbc0.png'><p>Stack Overflow</p></a></div><div class="bm finance"><a href='https://www.paypal.co.uk'><img src='.bm.shots/3b79da0a3fb650a1e2ebf264f64043eb.png'><p>Paypal</p></a></div><div class="bm news"><a href='http://www.theregister.com/'><img src='.bm.shots/6201323b3a4789d96f656ec6121af0fd.png'><p>The Register</p></a></div><div class="bm travel"><a href='http://www.expedia.com'><img src='.bm.shots/f339c1f2b570d3b5febe004e07dea4a8.png'><p>Expedia</p></a></div><div class="bm recipes"><a href='http://appetiteforchina.com/'><img src='.bm.shots/08c6ea88cc19ea1f98c25a5ab6e5013d.png'><p>Appetite for China</p></a></div><div class="bm recipes"><a href='http://pinchofyum.com/'><img src='.bm.shots/30743bdd516c0fe116bc1df2f1591488.png'><p>Pinch of Yum</p></a></div><div class="bm recipes"><a href='http://damndelicious.net/'><img src='.bm.shots/2c4a3cf23be31d6217851a3bc14d544f.png'><p>Damn Delicious</p></a></div><div class="bm recipes"><a href='https://www.foodiecrush.com/'><img src='.bm.shots/26dab44e41d32b44db560ecce5b6d550.png'><p>Foodie Crush</p></a></div><div class="bm noimage recipes"><a href='https://www.italianfoodforever.com/'><div class="letter">I</div><p>Italian Food Forever</p></a></div><div class="bm noimage productivity"><a href='https://mail.google.com'><div class="letter">G</div><p>Gmail</p></a></div><div class="bm noimage recipes"><a href='http://www.deliaonline.com'><div class="letter">D</div><p>Delia Online</p></a></div><div class="bm noimage travel"><a href='http://www.thetrainline.com'><div class="letter">T</div><p>The Trainline</p></a></div><div class="bm shopping"><a href='http://www.johnlewis.com'><img src='.bm.shots/a795c12d60edb582427ae9e12f17bfd1.png'><p>John Lewis</p></a></div><div class="bm shopping"><a href='http://ebay.co.uk'><img src='.bm.shots/7a7a68c7fab489b3f4df50b17986bd91.png'><p>eBay</p></a></div><div class="bm recipes"><a href='https://chewtown.com'><img src='.bm.shots/28739dc690da3e2811e2a5cce0c41dc2.png'><p>Chew Town</p></a></div><div class="bm noimage restaurants"><a href='http://www.littlesaigonlondon.co.uk/'><div class="letter">L</div><p>Little Saigon</p></a></div><div class="bm media"><a href='https://playbeta.pocketcasts.com/web/'><img src='.bm.shots/9bbe75e28aeb635917159f20118b3705.png'><p>Pocket Casts</p></a></div><div class="bm productivity"><a href='https://fastmail.com/'><img src='.bm.shots/1fb34e3d9240bfe3232363e4f3cd30d6.png'><p>Fastmail</p></a></div><div class="bm work"><a href='https://infectiousmedia.peoplehr.net/'><img src='.bm.shots/8159516e74657f29efcfc0731a964239.png'><p>People HR</p></a></div><div class="bm shopping"><a href='http://www.wiggle.com'><img src='.bm.shots/552f1691319557c380cb2f5662362f42.png'><p>Wiggle</p></a></div><div class="bm noimage shopping"><a href='http://www.zalando.com'><div class="letter">Z</div><p>Zalando</p></a></div><div class="bm social jobs"><a href='https://linkedin.com'><img src='.bm.shots/a62a49d47810fb531ebee48becfa9ae8.png'><p>LinkedIn</p></a></div>
+      </div>
+    <script src="../dev-resources/public/js/bookmark_html.js"></script>
+  </body>
+</html>
