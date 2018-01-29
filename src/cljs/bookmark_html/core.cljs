@@ -14,7 +14,7 @@
 
 (extend-type js/NodeList
   ISeqable
-(-seq [array] (array-seq array 0)))
+  (-seq [array] (array-seq array 0)))
 
 (defn listen [el type]
   (let [out (chan)]
@@ -32,22 +32,34 @@
       (set! (prepare-ddg x))))
 
 
+(defn handle-input [filterVal mediaElements]
+  (cond
+    (= filterVal "all") 
+    (doseq [el mediaElements] (style/showElement el true))
+
+    (= (first filterVal) "!") (search-for-input filterVal)
+    
+    :else
+    (try
+      (let [filterElements (dom/getElementsByClass filterVal)]
+        (if (= 0 (count filterElements))
+          (search-for-input filterVal)
+          (do
+            (doseq [el mediaElements] (style/showElement el false))
+            (doseq [el (dom/getElementsByClass filterVal)] (style/showElement el true)))))
+      (catch :default e (.log js/console "Invalid search input")))))
+
+
 (let [keypresses (listen (dom/getElement "search") "keypress")]
-  (go (while true
-        (let [key-event (<! keypresses)]
-          (when (= (.-charCode key-event) 13)
-            (do
-              (.-preventDefault key-event)
-              (let [filterVal (.-value (dom/getElement "search"))
-                    mediaElements (dom/getElementsByClass "bm")]
-                (if (= filterVal "all")
-                  (doseq [el mediaElements] (style/showElement el true))
-                  (let [filterElements (dom/getElementsByClass filterVal)]
-                    (if (= 0 (count filterElements))
-                      (search-for-input filterVal)
-                      (do
-                        (doseq [el mediaElements] (style/showElement el false))
-                        (doseq [el (dom/getElementsByClass filterVal)] (style/showElement el true)))))))))))))
+  (go-loop []
+    (let [key-event (<! keypresses)]
+      (when (= (.-charCode key-event) 13)
+        (do
+          (.-preventDefault key-event)
+          (let [filterVal (.-value (dom/getElement "search"))
+                mediaElements (dom/getElementsByClass "bm")]
+            (handle-input filterVal mediaElements)))))
+    (recur)))
   
 
 
